@@ -23,6 +23,9 @@ class _HeartState extends State<Heart> with SingleTickerProviderStateMixin {
     _colorAnimation = ColorTween(begin: Colors.grey[400], end: Colors.red)
       .animate(_controller);
 
+    //normal tween has only beg and end
+    // we require a tween sequence with mutlple tweens as heart goes from size to 30-50 and 50-30
+    //weight is the percentage of time it will use in the sequence so if both are 50 then time is equally divided bw both
     _sizeAnimation = TweenSequence(
       <TweenSequenceItem<double>>[
         TweenSequenceItem<double>(
